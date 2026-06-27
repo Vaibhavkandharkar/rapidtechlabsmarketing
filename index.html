@@ -1243,6 +1243,55 @@
         flex: 1;
       }
 
+
+          /* ===== WhatsApp floating button ===== */
+      .whatsapp-float {
+        position: fixed;
+        bottom: 24px;
+        left: 24px;
+        z-index: 65;
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        background: #25d366;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 14px 30px -8px rgba(0, 0, 0, 0.4);
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+      .whatsapp-float:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 18px 36px -8px rgba(0, 0, 0, 0.45);
+      }
+      .whatsapp-float svg {
+        width: 30px;
+        height: 30px;
+      }
+      .whatsapp-pulse {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        background: #25d366;
+        opacity: 0.55;
+        animation: wa-pulse 2.2s ease-out infinite;
+      }
+      @keyframes wa-pulse {
+        0% {
+          transform: scale(1);
+          opacity: 0.55;
+        }
+        100% {
+          transform: scale(1.7);
+          opacity: 0;
+        }
+      }
+
+
+
+
       /* ===== Reveal animation ===== */
       .reveal {
         opacity: 0;
@@ -3079,6 +3128,20 @@
         >
       </div>
     </footer>
+
+     <a
+      href="https://wa.me/918806884168"
+      class="whatsapp-float"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat on WhatsApp"
+    >
+      <span class="whatsapp-pulse"></span>
+      <svg viewBox="0 0 32 32" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16.001 3C9.373 3 4 8.373 4 15.001c0 2.386.7 4.61 1.91 6.474L4.06 28.93l7.61-1.996A11.93 11.93 0 0 0 16 27c6.628 0 12-5.373 12-12.001C28 8.373 22.628 3 16.001 3Zm6.94 17.06c-.293.825-1.452 1.589-2.001 1.674-.513.08-1.16.114-1.871-.117-.432-.14-1-.323-1.722-.633-3.034-1.31-5.01-4.36-5.157-4.563-.147-.204-1.232-1.64-1.232-3.13 0-1.49.78-2.222 1.057-2.529.277-.307.604-.384.806-.384.202 0 .404.002.58.011.187.009.438-.075.685.522.252.611.857 2.099.932 2.252.075.153.124.331.025.531-.099.2-.149.324-.297.5-.149.176-.314.392-.448.527-.149.149-.305.31-.131.609.174.298.774 1.276 1.661 2.066 1.142 1.018 2.106 1.334 2.404 1.483.298.149.471.124.645-.075.174-.199.747-.871.946-1.17.199-.298.398-.249.671-.149.273.099 1.73.815 2.029.964.298.149.497.224.571.349.075.124.075.722-.218 1.546Z"/>
+      </svg>
+    </a>
+
 
     <div class="sticky-cta">
       <a href="#contact" class="btn btn-primary btn-block"
